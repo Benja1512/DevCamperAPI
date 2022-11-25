@@ -1,0 +1,19 @@
+{
+  "name": "devcamperapi",
+  "version": "1.0.0",
+  "description": "DevCamperAPI Backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node server",
+    "dev": "nodemon server"
+  },
+  "author": "Benjamin Ford Ontiveros Ordinola",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
