@@ -1,6 +1,9 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const app = express();
+const apps = express();
+
+
+
 const morgan = require('morgan');
 const colors = require('colors');
 const connectDB = require('./config/db')
@@ -10,7 +13,13 @@ const connectDB = require('./config/db')
 // Routes files
 const bootcamps = require('./routes/bootcamps.js');
 
-// Connet env vars
+
+const app = express();
+
+//body parser
+app.use(express.json())
+
+// Connect env vars
 connectDB();
 
 // load env vars
@@ -18,7 +27,7 @@ dotenv.config({ path: './config/config.env'});
 
 // dev logging middleware
 if (process.env.NODE_ENV === 'development') {
-    app.use(morgan('dev'));
+    use(morgan('dev'));
 }
 
 
@@ -34,8 +43,13 @@ app.listen(
 
 //Handle unhandled promise rejections
 
+function server(param) {
+    
+}
+
 process.on('unhandledRejection', (err, promise) => {
     console.log(`Error: ${err.message}`.red);
     //close server & exit process
-    server.close(() => process.exit(1));
+    
+    server(() => process.exit(1));
 });
